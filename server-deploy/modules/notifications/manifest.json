@@ -1,0 +1,45 @@
+{
+  "name": "notifications",
+  "version": "1.0.0",
+  "description": "Email notification system for Schwarzenberg Tech Time Management System",
+  "author": "Schwarzenberg Tech",
+  "category": "Communication",
+  "depends": ["core"],
+  "autoInstall": true,
+  "required": false,
+  "config": {
+    "defaultSettings": {
+      "emailProvider": "smtp",
+      "smtpHost": "smtp.example.com",
+      "smtpPort": 587,
+      "smtpSecure": false,
+      "smtpUser": "",
+      "smtpPassword": "",
+      "emailFrom": "timemanagement@example.com",
+      "emailFromName": "Time Management System",
+      "bccAdmin": false,
+      "adminEmail": "",
+      "dailyEmailLimit": 1000,
+      "enableNotifications": true
+    }
+  },
+  "templates": [
+    "leave_request_created",
+    "leave_request_approved",
+    "leave_request_denied",
+    "leave_request_cancelled",
+    "time_entry_reminder",
+    "time_entry_approved",
+    "monthly_report",
+    "password_reset",
+    "account_created"
+  ],
+  "hooks": [
+    "onLeaveRequestCreate",
+    "onLeaveRequestUpdate",
+    "onLeaveRequestDelete",
+    "onTimeEntryCreate",
+    "onTimeEntryUpdate",
+    "onMonthlyReportGenerate"
+  ]
+}

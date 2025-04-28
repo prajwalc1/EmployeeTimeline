@@ -1,0 +1,28 @@
+{
+  "name": "timeTracking",
+  "version": "1.0.0",
+  "description": "Time tracking module for Schwarzenberg Tech Time Management System",
+  "author": "Schwarzenberg Tech",
+  "category": "HR",
+  "depends": ["core"],
+  "autoInstall": true,
+  "required": false,
+  "config": {
+    "defaultSettings": {
+      "workingHoursPerDay": 8,
+      "breakDurationMinutes": 30,
+      "allowOvertime": true,
+      "roundingMethod": "nearest",
+      "roundingMinutes": 15,
+      "automaticBreakDeduction": true,
+      "minimumBreakThresholdHours": 6,
+      "defaultProjectCode": "INTERNAL"
+    }
+  },
+  "apiEndpoints": [
+    "/api/time-entries",
+    "/api/time-entries/:id",
+    "/api/time-entries/monthly-total/:employeeId",
+    "/api/time-entries/export"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "timeTracking",
+  "version": "1.0.0",
+  "description": "Time tracking module for Schwarzenberg Tech Time Management",
+  "category": "HR",
+  "author": "Schwarzenberg Tech",
+  "website": "https://example.com",
+  "depends": ["core"],
+  "autoInstall": true,
+  "application": true,
+  "summary": "Track employee working hours and projects",
+  "assets": {
+    "css": ["assets/css/timeTracking.css"],
+    "js": ["assets/js/timeTracking.js"],
+    "images": ["assets/images/"]
+  },
+  "data": [
+    "data/initial_data.json"
+  ],
+  "demo": [
+    "demo/demo_data.json"
+  ],
+  "config": {
+    "defaultSettings": {
+      "workingHoursPerDay": 8,
+      "breakDurationMinutes": 30,
+      "allowOvertime": true,
+      "roundingMethod": "nearest",
+      "roundingMinutes": 15,
+      "automaticBreakDeduction": true,
+      "minimumBreakThresholdHours": 6,
+      "defaultProjectCode": "INTERNAL"
+    }
+  }
+}

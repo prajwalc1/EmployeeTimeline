@@ -1,0 +1,72 @@
+server:
+  host: 0.0.0.0
+  port: 5000
+  workers: 1
+  compression: true
+  cors:
+    enabled: true
+    origins: ['*']
+  maxUploadSize: 50mb
+
+database:
+  type: sqlite
+  sqlite:
+    path: ./data/database.sqlite
+    journalMode: WAL
+  postgres:
+    url: ''
+    maxConnections: 10
+    sslEnabled: true
+  backup:
+    autoBackup: true
+    intervalHours: 24
+    maxBackups: 7
+    path: ./backups
+
+security:
+  sessionSecret: change-me-in-production
+  jwtSecret: change-me-in-production
+  jwtExpiration: 24h
+  passwordHashRounds: 10
+  csrfProtection: true
+  rateLimit:
+    enabled: true
+    windowMs: 900000
+    maxRequests: 100
+
+modules:
+  core:
+    enabled: true
+    settings:
+      companyName: Schwarzenberg Tech
+      systemTitle: Time Management System
+      language: de
+      dateFormat: dd.MM.yyyy
+      timeFormat: HH:mm
+      timezone: Europe/Berlin
+  timeTracking:
+    enabled: true
+    settings:
+      workingHoursPerDay: 8
+      breakDurationMinutes: 30
+      allowOvertime: true
+      roundingMethod: nearest
+      roundingMinutes: 15
+      automaticBreakDeduction: true
+      minimumBreakThresholdHours: 6
+      defaultProjectCode: INTERNAL
+  leaveManagement:
+    enabled: true
+  reporting:
+    enabled: true
+  admin:
+    enabled: true
+
+logging:
+  level: info
+  console: true
+  file:
+    enabled: true
+    path: ./logs
+    maxSize: 10m
+    maxFiles: 5

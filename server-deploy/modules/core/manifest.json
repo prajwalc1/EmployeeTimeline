@@ -1,0 +1,31 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "Core module for Schwarzenberg Tech Time Management System",
+  "author": "Schwarzenberg Tech",
+  "category": "System",
+  "depends": [],
+  "autoInstall": true,
+  "required": true,
+  "config": {
+    "defaultSettings": {
+      "companyName": "Schwarzenberg Tech",
+      "systemTitle": "Time Management System",
+      "language": "de",
+      "dateFormat": "dd.MM.yyyy",
+      "timeFormat": "HH:mm",
+      "timezone": "Europe/Berlin"
+    }
+  },
+  "services": [
+    "auth",
+    "settings",
+    "user",
+    "employee"
+  ],
+  "hooks": [
+    "onSystemStartup",
+    "onUserLogin",
+    "onUserLogout"
+  ]
+}

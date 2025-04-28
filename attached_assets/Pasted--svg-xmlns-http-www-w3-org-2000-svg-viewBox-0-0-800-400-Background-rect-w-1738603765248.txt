@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#f0f0f0"/>
+    
+    <!-- Title -->
+    <text x="400" y="30" text-anchor="middle" font-size="20" font-weight="bold">CAN Bus Network Topology (2 Mbps)</text>
+
+    <!-- Main Bus Line -->
+    <line x1="50" y1="200" x2="750" y2="200" stroke="#000" stroke-width="3" stroke-dasharray="10,5"/>
+
+    <!-- Nodes with Stub Lengths -->
+    <g>
+        <!-- CGW (Central Gateway) -->
+        <circle cx="100" cy="200" r="15" fill="#4CAF50"/>
+        <text x="100" y="240" text-anchor="middle">CGW</text>
+        
+        <!-- ISCS -->
+        <line x1="100" y1="200" x2="100" y2="250" stroke="#000" stroke-width="2"/>
+        <circle cx="100" y1="250" cy="250" r="10" fill="#2196F3"/>
+        <text x="100" y="290" text-anchor="middle">ISCS (4m)</text>
+        
+        <!-- ASS -->
+        <line x1="250" y1="200" x2="250" y2="250" stroke="#000" stroke-width="2"/>
+        <circle cx="250" cy="250" r="10" fill="#FF9800"/>
+        <text x="250" y="290" text-anchor="middle">ASS (1m)</text>
+        
+        <!-- MK100 -->
+        <line x1="350" y1="200" x2="350" y2="250" stroke="#000" stroke-width="2"/>
+        <circle cx="350" cy="250" r="10" fill="#9C27B0"/>
+        <text x="350" y="290" text-anchor="middle">MK100 (1m)</text>
+        
+        <!-- BOI -->
+        <line x1="500" y1="200" x2="500" y2="250" stroke="#000" stroke-width="2"/>
+        <circle cx="500" cy="250" r="10" fill="#FF5722"/>
+        <text x="500" y="290" text-anchor="middle">BOI (5m)</text>
+        
+        <!-- SDS (Termination) -->
+        <circle cx="700" cy="200" r="15" fill="#795548"/>
+        <text x="700" y="240" text-anchor="middle">SDS</text>
+    </g>
+
+    <!-- Distance Labels -->
+    <text x="400" y="100" text-anchor="middle" font-size="16">
+        Total Bus Length: ~20m
+        Stub Lengths Vary (0.1m - 5m)
+    </text>
+
+    <!-- Termination Indicators -->
+    <text x="50" y="350" font-size="14">
+        * Both ends (CGW and SDS) terminated with 120Ω resistors
+        * Network Impedance: ~60Ω
+    </text>
+</svg>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Time Management System</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    .header { background-color: #004a87; color: white; padding: 10px 20px; }
+    .header h1 { margin: 0; font-size: 24px; }
+    .content { padding: 20px; border: 1px solid #ddd; }
+    .footer { margin-top: 20px; text-align: center; font-size: 12px; color: #777; }
+    .button { display: inline-block; padding: 10px 20px; background-color: #004a87; color: white; text-decoration: none; border-radius: 4px; }
+    table { width: 100%; border-collapse: collapse; }
+    table th, table td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+    table th { background-color: #f2f2f2; width: 40%; }
+    .info-banner { background-color: #2196F3; color: white; padding: 10px; text-align: center; margin-bottom: 15px; }
+    .summary-box { background-color: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin-top: 20px; }
+    .summary-box h3 { margin-top: 0; }
+    .chart { background-color: #f5f5f5; border: 1px solid #ddd; padding: 15px; margin: 15px 0; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>{{company.name}}</h1>
+    </div>
+    <div class="content">
+      <div class="info-banner">
+        <h3 style="margin: 0;">Monthly Time Report: {{month}}/{{year}}</h3>
+      </div>
+      
+      <p>Dear {{employee.name}},</p>
+      <p>Your monthly time report for {{month}}/{{year}} is now available. Below is a summary of your working hours and activities:</p>
+      
+      <table>
+        <tr>
+          <th>Total Days:</th>
+          <td>{{report.totalDays}}</td>
+        </tr>
+        <tr>
+          <th>Working Days:</th>
+          <td>{{report.workingDays}}</td>
+        </tr>
+        <tr>
+          <th>Total Hours:</th>
+          <td>{{report.totalHours}} hours</td>
+        </tr>
+        <tr>
+          <th>Average Daily Hours:</th>
+          <td>{{report.averageDailyHours}} hours</td>
+        </tr>
+        <tr>
+          <th>Overtime Hours:</th>
+          <td>{{report.overtimeHours}} hours</td>
+        </tr>
+        <tr>
+          <th>Leave Days Used:</th>
+          <td>{{report.leaveDays}} days</td>
+        </tr>
+      </table>
+      
+      <div class="summary-box">
+        <h3>Monthly Summary</h3>
+        <p>During this month, you worked for a total of {{report.totalHours}} hours over {{report.workingDays}} working days, with {{report.overtimeHours}} hours of overtime.</p>
+        
+        {{#if report.projects}}
+        <h4>Projects Breakdown:</h4>
+        <table>
+          <tr>
+            <th>Project</th>
+            <th>Hours</th>
+            <th>Percentage</th>
+          </tr>
+          {{#each report.projects}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.hours}} hours</td>
+            <td>{{this.percentage}}%</td>
+          </tr>
+          {{/each}}
+        </table>
+        {{/if}}
+      </div>
+      
+      <div class="chart">
+        <p>[Time distribution chart would be displayed here]</p>
+      </div>
+      
+      <p>You can view the complete report with detailed breakdown in the Time Management System.</p>
+      
+      {{#if reportUrl}}
+      <p style="margin-top: 30px;">
+        <a href="{{reportUrl}}" class="button">View Full Report</a>
+      </p>
+      {{/if}}
+    </div>
+    <div class="footer">
+      <p>
+        {{company.name}}<br>
+        {{#if company.address}}{{company.address}}<br>{{/if}}
+        {{#if company.website}}<a href="{{company.website}}">{{company.website}}</a>{{/if}}
+      </p>
+      <p style="font-size: 11px; color: #999;">
+        This is an automated report. Please contact HR if you have any questions about the information in this report.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
