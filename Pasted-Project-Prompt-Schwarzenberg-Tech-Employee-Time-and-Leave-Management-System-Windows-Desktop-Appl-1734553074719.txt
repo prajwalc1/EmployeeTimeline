@@ -1,0 +1,104 @@
+Project Prompt: Schwarzenberg Tech - Employee Time and Leave Management System (Windows Desktop Application)
+Project Overview:
+Develop a comprehensive employee time tracking and leave management application targeting Windows desktop deployment, with features tailored for German work regulations (specifically Bavaria and Baden-Württemberg).
+Technology Stack:
+
+Frontend: React with TypeScript
+State Management: React Context/Hooks
+Desktop Packaging: Electron
+Database: SQLite (for local data storage)
+UI Framework: Tailwind CSS
+Additional Libraries:
+
+date-fns (date manipulation)
+xlsx (export functionality)
+electron-builder (Windows packaging)
+
+
+
+Core Features:
+
+Employee Management
+
+
+Employee registration
+Profile creation
+Unique employee identification
+Department assignment
+
+
+Time Tracking System
+
+
+Calendar-based hour logging
+Validation against German work regulations
+Holidays for Bavaria/Baden-Württemberg
+Color-coded calendar
+Hourly restrictions
+
+Daily limit: 8 hours
+Weekly limit: 40 hours
+Break time regulations
+
+
+
+
+Leave Management
+
+
+Annual leave balance: 30 days
+Leave application workflow
+Leave type categorization
+Status tracking (Pending/Approved/Rejected)
+
+
+Reporting & Export
+
+
+Time entry exports (CSV/Excel)
+Leave application exports
+Monthly/yearly summaries
+Configurable export options
+
+
+Windows Desktop Specifics
+
+
+Offline functionality
+Local data persistence
+System tray integration
+Auto-start options
+Update mechanisms
+
+Development Milestones:
+Phase 1: Foundation
+
+Set up React + Electron project
+Configure build processes
+Implement basic UI structure
+Create employee registration/login
+
+Phase 2: Time Tracking
+
+Develop calendar component
+Implement hour logging mechanism
+Add holiday and work regulation validations
+
+Phase 3: Leave Management
+
+Create leave application workflow
+Implement leave balance tracking
+Add approval/rejection logic
+
+Phase 4: Reporting & Export
+
+Develop export utilities
+Create reporting dashboards
+Implement data visualization
+
+Phase 5: Desktop Integration
+
+Add system tray functionality
+Configure auto-start
+Implement update mechanism
+Package for Windows distribution
